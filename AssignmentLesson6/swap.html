@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .pics {
+            display: inline;
+
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="pics">
+        <img id="image1" class="apple" src="apple.png" alt="Apple" height="50px">
+    </div>
+    <div class="pics">
+        <img id="image2" class="banana" src="banana.jpg" alt="banana" height="50px">
+    </div>
+    <button onclick="swap()">Swap</button>
+
+    <script>
+
+        let image1 = document.getElementById("image1");
+        let image2 = document.getElementById("image2");
+        function swap() {
+            let temp = image1.src;
+            console.log(temp);
+            image1.src = image2.src;
+            image2.src = temp;
+        }
+
+    </script>
+
+</body>
+
+</html>

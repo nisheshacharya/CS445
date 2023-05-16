@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="number-input" id="firstNum">
+    <select id="selector">
+        <option></option>
+        <option id="+" value="+">+</option>
+        <option id="-" value="-">-</option>
+        <option id="*" value="*">×</option>
+        <option id="/" value="÷">÷</option>
+    </select>
+    <input type="text" class="number-input" id="secondNum">
+    <br>
+    <button id="calculate" onclick="calculate()">Calculate</button>
+
+    <script>
+
+
+        let result;
+        function calculate() {
+
+            let selected = document.getElementById("selector");
+            let num1 = document.getElementById("firstNum").value;
+            let num2 = document.getElementById("secondNum").value;
+
+
+
+            console.log("running");
+            console.log("value: ", selected.value)
+            console.log(num1, " ", num2);
+            if (selected.value == "+") {
+                result = parseInt(num1) + parseInt(num2);
+            }
+            else if (selected.value == "-") {
+                result = parseInt(num1) - parseInt(num2);;
+            }
+            else if (selected.value == "*") {
+                result = parseInt(num1) * parseInt(num2);;
+            }
+            else if (selected.value == "÷") {
+                result = parseInt(num1) / parseInt(num2);
+            }
+            else {
+                result = "Select a Value"
+            }
+            console.log(result)
+
+            let res = document.createElement("div");
+            res.innerHTML = result;
+            document.body.append(res);
+
+        }
+
+    </script>
+</body>
+
+</html>
